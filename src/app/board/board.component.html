@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Meta tags, title, and link to your stylesheets -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap">
+</head>
+<body>
+  <!-- Background animation -->
+  <div class="context">
+    <h1>Pure Css Animated Background</h1>
+  </div>
+
+  <div class="area">
+    <ul class="circles">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+
+  <!-- Your existing content here -->
+  <mat-toolbar class="custom-toolbar">
+    <img src="assets/images/noteify-low-resolution-logo-color-on-transparent-background.png" alt="LOGO">
+    <span>Kanban Board</span>
+  </mat-toolbar>
+  
+  <div class="board">
+    <div *ngFor="let column of columns; let i = index" class="column-container">
+      <div class="column">
+        <mat-card-header>
+          <div class="header-title" [ngClass]="{
+              'to-do': column.name === 'To Do',
+              'in-progress': column.name === 'In Progress',
+              'done': column.name === 'Done'
+            }">
+            <span class="title-text">{{ column.name }}</span>
+            <button class="add-task-button" (click)="openAddTaskDialog(i)">+</button>
+          </div>
+        </mat-card-header>
+        <div *ngIf="column.tasks.length === 0" class="no-tasks-message">
+          No tasks available
+        </div>
+        <div
+          cdkDropList
+          [cdkDropListData]="column.tasks"
+          [cdkDropListConnectedTo]="connectedTo"
+          class="task-list"
+          (cdkDropListDropped)="drop($event)"
+        >
+          <mat-card class="column-card" *ngFor="let task of column.tasks" cdkDrag>
+            <mat-card-content>
+              <app-task [task]="task" [columnIndex]="i" (taskDeleted)="handleTaskDeleted($event, i)"></app-task>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts for Angular and other libraries -->
+</body>
+</html>

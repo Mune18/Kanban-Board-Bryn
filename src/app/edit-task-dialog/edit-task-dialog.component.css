@@ -1,0 +1,87 @@
+/* Dialog title */
+.mat-dialog-title {
+  font-family: 'Poppins', sans-serif; /* Use the Poppins font */
+  font-size: 24px; /* Adjust title font size */
+  font-weight: 600; /* Bold font weight */
+  color: #333; /* Dark gray color for better readability */
+  margin-bottom: 20px; /* Space below the title */
+  text-align: center; /* Center align the title */
+}
+
+/* Dialog content area */
+.mat-dialog-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Space between form fields */
+  padding: 20px; /* Padding around the content */
+}
+
+/* Form fields */
+.mat-form-field {
+  width: 100%; /* Full width for form fields */
+}
+
+/* Labels */
+.mat-form-field .mat-label {
+  font-family: 'Poppins', sans-serif; /* Use the Poppins font */
+  font-size: 14px; /* Adjust label font size */
+  color: #666; /* Medium gray color for labels */
+}
+
+/* Input fields and textarea */
+input.mat-input-element, 
+textarea.mat-input-element {
+  font-family: 'Poppins', sans-serif; /* Use the Poppins font */
+  font-size: 14px; /* Adjust font size */
+  color: #333; /* Dark gray color for input text */
+  padding: 10px; /* Add padding for better text visibility */
+  border-radius: 4px; /* Rounded corners for input fields */
+  border: 1px solid #ddd; /* Light border for input fields */
+  background-color: #f9f9f9; /* Light gray background */
+  transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transition */
+}
+
+/* Add subtle shadow and transition for focus state */
+input.mat-input-element:focus, 
+textarea.mat-input-element:focus {
+  border-color: #3f51b5; /* Blue border color on focus */
+  box-shadow: 0 0 5px rgba(63, 81, 181, 0.2); /* Subtle shadow effect */
+  outline: none; /* Remove default outline */
+}
+
+/* Dialog actions */
+.mat-dialog-actions {
+  display: flex;
+  justify-content: space-between; /* Align buttons to the ends */
+  padding: 20px; /* Space around buttons */
+  border-top: 1px solid #ddd; /* Top border for separation */
+}
+
+/* Buttons */
+button.mat-button {
+  font-family: 'Poppins', sans-serif; /* Use the Poppins font */
+  font-size: 14px; /* Adjust button font size */
+  text-transform: uppercase; /* Capitalize button text */
+  border-radius: 4px; /* Rounded corners for buttons */
+  padding: 10px 20px; /* Padding for buttons */
+  transition: background-color 0.3s; /* Smooth transition */
+}
+
+button.mat-button[color="primary"] {
+  background-color: #3f51b5; /* Primary color for save button */
+  color: white; /* Text color for primary button */
+}
+
+button.mat-button[color="primary"]:hover {
+  background-color: #303f9f; /* Darker blue on hover */
+}
+
+/* Cancel button */
+button.mat-button:not([color="primary"]) {
+  background-color: #f5f5f5; /* Light gray background for cancel button */
+  color: #333; /* Dark gray color for cancel button text */
+}
+
+button.mat-button:not([color="primary"]):hover {
+  background-color: #e0e0e0; /* Slightly darker gray on hover */
+}

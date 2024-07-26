@@ -1,0 +1,16 @@
+<div class="task">
+  <div class="priority-badge" [ngClass]="task.priority.toLowerCase()">{{ task.priority }}</div>  <!-- Add this line -->
+  <h3>{{ task.title }}</h3>
+  <p>{{ task.description }}</p>
+  <div class="task-footer">
+    <small>Due Date: {{ task.dueDate | date: 'mediumDate' }}</small>
+    <div class="task-buttons">
+      <button (click)="editTask()">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button (click)="deleteTask()">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,78 @@
+<!-- src/app/auth/auth.component.html -->
+
+<!-- Background animation -->
+<div class="area">
+    <ul class="circles">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+  
+  <div class="auth-container">
+    <div class="auth-card">
+      <h2>{{ isLoginMode ? 'Login' : 'Register' }}</h2>
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="input-group" *ngIf="!isLoginMode">
+          <input
+            type="text"
+            formControlName="fullName"
+            placeholder="Full Name"
+          />
+          <div *ngIf="form.get('fullName')?.invalid && form.get('fullName')?.touched">
+            <small class="error">Full name is required.</small>
+          </div>
+        </div>
+      
+        <div class="input-group">
+          <input
+            type="email"
+            formControlName="email"
+            placeholder="Email"
+          />
+          <div *ngIf="form.get('email')?.invalid && form.get('email')?.touched">
+            <small class="error">Please enter a valid email address.</small>
+          </div>
+        </div>
+      
+        <div class="input-group">
+          <input
+            type="password"
+            formControlName="password"
+            placeholder="Password"
+          />
+          <div *ngIf="form.get('password')?.invalid && form.get('password')?.touched">
+            <small class="error">Password must be at least 6 characters.</small>
+          </div>
+        </div>
+      
+        <div class="input-group" *ngIf="!isLoginMode">
+          <input
+            type="password"
+            formControlName="confirmPassword"
+            placeholder="Confirm Password"
+          />
+          <div *ngIf="form.get('confirmPassword')?.value !== form.get('password')?.value && form.get('confirmPassword')?.touched">
+            <small class="error">Passwords must match.</small>
+          </div>
+        </div>
+      
+        <button type="submit" [disabled]="form.invalid">
+          {{ isLoginMode ? 'Login' : 'Register' }}
+        </button>
+      
+        <p class="navigation-link">
+          {{ isLoginMode ? "Don't have an account?" : 'Already have an account?' }}
+          <a (click)="toggleMode()">{{ isLoginMode ? 'Register' : 'Login' }}</a>
+        </p>
+      </form>
+    </div>
+  </div>
+  

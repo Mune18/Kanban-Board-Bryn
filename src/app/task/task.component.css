@@ -1,0 +1,93 @@
+/* Style for task container */
+.task {
+  padding: 16px; /* Add padding around the task */
+  border-radius: 8px; /* Round the corners */
+  background: white; /* White background for tasks */
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Arrange elements vertically */
+}
+
+/* Style for task title */
+.task h3 {
+  font-family: 'Poppins', sans-serif; /* Apply Poppins font */
+  font-size: 18px; /* Font size for the title */
+  font-weight: 700;
+  margin-bottom: 8px; /* Space below the title */
+  margin-top: 17px;
+}
+
+/* Style for task description */
+.task p {
+  font-family: 'Poppins', sans-serif; /* Apply Poppins font */
+  font-size: 16px; /* Font size for the description */
+  margin-bottom: 8px; /* Space below the description */
+}
+
+/* Style for task footer */
+.task-footer {
+  display: flex; /* Use flexbox for layout */
+  justify-content: space-between; /* Space between due date and buttons */
+  align-items: center; /* Center items vertically */
+  margin-top: 8px; /* Space above the footer */
+  margin-bottom: -16px;
+}
+
+/* Style for due date */
+.task-footer small {
+  font-family: 'Poppins', sans-serif; /* Apply Poppins font */
+  color: #888; /* Grey color for due date */
+  align-self: flex-start; /* Align due date to the top */
+}
+
+/* Style for task buttons container */
+.task-buttons {
+  display: flex; /* Use flexbox for layout */
+  gap: 8px; /* Space between buttons */
+}
+
+/* Style for task buttons */
+.task button {
+  background-color: transparent; /* Transparent background */
+  color: #007bff; /* Blue text color */
+  border: none; /* Remove default border */
+  border-radius: 4px; /* Round the corners */
+  padding: 8px; /* Add padding */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-family: 'Poppins', sans-serif; /* Apply Poppins font */
+  display: flex; /* Use flexbox for icon layout */
+  align-items: center; /* Center icon vertically */
+  justify-content: center; /* Center icon horizontally */
+}
+
+/* Hover effect for task buttons */
+.task button:hover {
+  color: #0056b3; /* Darker blue on hover */
+}
+
+/* Style for Material Icons */
+mat-icon {
+  font-size: 20px; /* Adjust icon size */
+}
+.priority-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: white;
+  color: black;
+  border-radius: 12px;
+  padding: 5px 10px;
+  font-weight: bold;
+  border: 1px solid #e0e0e0;
+}
+
+.priority-badge.low {
+  background-color: #d0f0c0; /* Light green */
+}
+
+.priority-badge.medium {
+  background-color: #fff5c3; /* Light yellow */
+}
+
+.priority-badge.high {
+  background-color: #f5c6c6; /* Light red */
+}
